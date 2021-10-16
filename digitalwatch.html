@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+    <head>
+        <style>
+           
+        </style>
+      
+    </head>
+    <body>
+        <div class="digital_time" onload="timefunc()">
+            <p id="displaytime"></p>
+        </div>
+          <script type="text/javascript">
+              function timefunc(){
+                    var finaltime;
+                   var timeval = new Date();
+                   timehours = timeval.getHours();
+                   timeminutes = timeval.getMinutes();
+                   timeseconds = timeval.getSeconds();
+                   if(timehours < 12){
+                      finaltime = timehours+":"+timeminutes+":"+timeseconds+" AM";
+                      
+                   }
+                    
+                   else{
+                      finaltime = timehours+":"+timeminutes+":"+timeseconds+" PM";
+                     
+                   }
+                   document.getElementById("displaytime").innerHTML = finaltime;
+                  
+                  
+              }
+              setInterval(timefunc,1000)
+        </script>
+    </body>
+</html>
