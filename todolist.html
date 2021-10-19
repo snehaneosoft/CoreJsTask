@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+    <head>
+        <style>
+            #add{
+                background:#f00;
+                color: #fff;
+                border:1px solid red;
+                padding: 5px 12px;
+            }
+        </style>
+        <script type="text/javascript">
+             var srno = 0;
+             function add(){
+                 srno =srno+1;
+                 var nameval = document.getElementById("username").value;
+                 var tr = document.createElement("tr");
+                 tr.innerHTML = "<td>"+srno+"</td><td>"+nameval+"</td><td><button id='delete' onclick='deleterow(this)' currentrow='"+srno+"'>Delete</button></td>"
+                 document.querySelector(".table tbody").appendChild(tr)
+             }
+             function deleterow(deletedata){
+                deletedata.parentElement.parentElement.style.display="none";
+                 srno--;
+             }
+        </script>
+    </head>
+    <body>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Name:</label>
+            <input type="text" id="username" placeholder="Enter email">
+            <button id="add" onclick="add()">Add</button>
+        </div>
+         <table class="table">
+           <thead>
+              <tr>
+                <th>sr no</th>
+                <th>name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+           </tbody>
+        </table>
+    </body>
+</html>
